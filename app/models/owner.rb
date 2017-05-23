@@ -5,12 +5,21 @@ class Owner < ActiveRecord::Base
   # TODO: add association to appointments (through pets)
 
   # TODO: add validations
+  # validates_associated :pets
+  validates :first_name, presence: true, length: {maximum: 255}
+  validates :last_name, presence: true, length: {maximum: 255}
+  validates :email, presence: true, length: {maximum: 255}, uniqueness: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
 
   before_save :normalize_phone_number
 
   # removes leading 1 and the characters (, ), -, .
   def normalize_phone_number
     # stretch
+    # p self.phone
+    # raise "nil phone number" if self.phone.nil?
+
+    # self.phone.sub("1", "")
+    # p self.phone
   end
 
 end
