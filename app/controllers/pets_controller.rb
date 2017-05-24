@@ -15,9 +15,27 @@ class PetsController < ApplicationController
   end
 
   # TODO: set up *new* method with data for new view
+  def new
+    owner_id = params[:owner_id]
+    @owner = Owner.find owner_id
+    @pet = Pet.new
+  end
 
   # TODO: set up *create* method with database interactions for create
-  # TODO: handle save errors and communicate issues to user
+  def create
+    owner_id = params[:owner_id]
+    @owner = Owner.find owner_id
+    @pet = Pet.create(pet_params)
+    if @pet.save
+      @owner.pets << @pet
+      redirect_to @owner
+    else
+      # TODO: handle save errors and communicate issues to user
+      flash[:error] = @pet.errors.full_messages.join(" ")
+      render :new
+    end
+  end
+
 
   private
   def pet_params
