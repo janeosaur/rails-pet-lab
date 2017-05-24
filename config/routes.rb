@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :pets
   end
 
-  resources :pets, only: :show
+  resources :pets, only: [:show, :edit, :update, :destroy] do
+    resources :appointments, only: [:new, :create]
+  end
 
 end

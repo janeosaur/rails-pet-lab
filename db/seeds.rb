@@ -44,4 +44,19 @@ pets_data = []
     owner: owners.sample
   }
 end
+
 pets = Pet.create(pets_data)
+
+Appointment.destroy_all
+
+appointments_data = []
+6.times do
+  appointments_data << {
+    reason: "emergency",
+    name: FFaker::Name.last_name,
+    time: random_date(0.5,30.0),
+    # pet: pets.sample - doesn't work...
+  }
+end
+
+Appointment.create(appointments_data)

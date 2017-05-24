@@ -10,8 +10,8 @@ class PetsController < ApplicationController
     # TODO: set up data for show view
     pet_id = params[:id]
     @pet = Pet.find pet_id
-    owner_id = params[:owner_id]
-    @owner = Owner.find owner_id
+    # owner_id = params[:owner_id]
+    # @owner = Owner.find owner_id
   end
 
   # TODO: set up *new* method with data for new view

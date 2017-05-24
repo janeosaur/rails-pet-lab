@@ -2,3 +2,10 @@
 <hr>
 <p><strong>Name:</strong> <%= @pet.name %></p>
 <p><strong> Breed:</strong> <%= @pet.breed %></p>
+<% @pet.appointments.each do |appt| %>
+Vet name: <%= appt.name %>
+Date: <%= appt.time %>
+Reason: <%= appt.reason %>
+<% end %>
+
+<%= link_to "make new appointment", new_pet_appointment_path(@pet) %>

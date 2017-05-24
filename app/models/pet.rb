@@ -3,6 +3,7 @@ class Pet < ActiveRecord::Base
   belongs_to :owner
 
   # TODO: associate with appointments
+  has_many :appointments
 
   # TODO: validate name and breed
   validates :breed, presence: true
