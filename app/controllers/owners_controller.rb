@@ -4,8 +4,6 @@ class OwnersController < ApplicationController
     @owners = Owner.all
     count = cookies[:visit_count] || 1
     cookies[:visit_count] = count.to_i + 1
-    cookies[:asdf] = 2
-    cookies[:askjdflaskjfsaf] = "x"
   end
 
   def new
