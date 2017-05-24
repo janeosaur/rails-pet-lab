@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt'
+
 gem 'rails', '>= 5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'

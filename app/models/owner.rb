@@ -1,4 +1,7 @@
 class Owner < ActiveRecord::Base
+  # Adding secure password bcrypt stuff
+  has_secure_password
+  
   # TODO: add association to pets
   has_many :pets
 

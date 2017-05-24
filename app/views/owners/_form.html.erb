@@ -1,3 +1,4 @@
+
 <%= form_for @owner do |f| %>
   <div class="form-group">
     <%= f.text_field :first_name, class: "form-control", placeholder: "First Name", autofocus: true %>
@@ -10,6 +11,12 @@
   </div>
   <div class="form-group">
     <%= f.telephone_field :phone, class: "form-control", placeholder: "Phone Number" %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
   </div>
   <div class="form-group">
     <%= f.submit "Save Owner", class: "btn btn-block btn-success" %>
